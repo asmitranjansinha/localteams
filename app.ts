@@ -8,6 +8,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const PORT: string | number = 8080;
 
-app.listen(PORT, () => {
-    console.log(`server is running on ${PORT}`);
+app.get('/', (req, res) => {
+    res.send("Connected to localTeams server successfully!");
+})
+
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`server is running on http://192.168.1.76:${PORT}`);
 });
